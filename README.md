@@ -17,7 +17,6 @@ Show:
         Description: A British sitcom starring Rowan Atkinson.
 
 Asset:
-
         Id: -5613201416530659508
         OwnerShowId: -8083137316828919050
         Name: mr-bean-default-image
