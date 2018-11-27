@@ -15,43 +15,43 @@ public class BRTestApp {
 
         // Add Season 1 Episode 1
 
-        storage.createVideoAsset(mrBean.GetId(), "mr-bean-s1e1", "https://youtube.com", 0,
+        storage.createVideoAsset(mrBean.getId(), "mr-bean-s1e1", "https://youtube.com", 0,
                 VideoAssetMeta.VideoTypes.EPISODE);
 
         // Add Default Thumbnail
 
-        var mrBeanThumbDefault = storage.createImageAsset(mrBean.GetId(), "mr-bean-thumb-default",
+        var mrBeanThumbDefault = storage.createImageAsset(mrBean.getId(), "mr-bean-thumb-default",
                 "https://images.google.com", 0, null);
 
         // Add Poster
 
-        storage.createImageAsset(mrBean.GetId(), "mr-bean-poster-1", "https://images.google.com", 0,
+        storage.createImageAsset(mrBean.getId(), "mr-bean-poster-1", "https://images.google.com", 0,
                 mrBeanThumbDefault.getId());
 
-        // Add Advert
+        // Add Ad
 
-        storage.createAdAsset(mrBean.GetId(), "mr-bean-ad", "https://gov.uk", 0, "The best show.");
+        storage.createAdAsset(mrBean.getId(), "mr-bean-ad", "https://gov.uk", 0, "The best show.");
 
         // Generate Container
 
         var container = new Object() {
-            Show show = storage.getShow(mrBean.GetId());
-            List<Asset> assets = storage.listAssetsByShow(mrBean.GetId());
+            final Show show = storage.getShow(mrBean.getId());
+            final List<Asset> assets = storage.listAssetsByShow(mrBean.getId());
         };
 
         // Print Container
 
         System.out.println("Show:");
 
-        System.out.println("\tId: " + container.show.GetId());
-        System.out.println("\tName: " + container.show.GetName());
-        System.out.println("\tDescription: " + container.show.GetDescription());
+        System.out.println("\tId: " + container.show.getId());
+        System.out.println("\tName: " + container.show.getName());
+        System.out.println("\tDescription: " + container.show.getDescription());
 
         System.out.println();
 
         System.out.println("Assets:");
 
-        for (Asset a : container.assets) {
+        for (var a : container.assets) {
             System.out.println("\tId: " + a.getId());
             System.out.println("\tOwnerShowId: " + a.getOwnerShowId());
             System.out.println("\tName: " + a.getName());
@@ -60,22 +60,22 @@ public class BRTestApp {
             System.out.println("\tExpiration: " + a.getExpiration());
 
             if (a.getMeta() instanceof VideoAssetMeta) {
-                var aAsV = (VideoAssetMeta) a.getMeta();
+                var m = (VideoAssetMeta) a.getMeta();
 
-                System.out.println("\tVideo Type: " + aAsV.getVideoType());
+                System.out.println("\tVideo Type: " + m.getVideoType());
             }
 
             if (a.getMeta() instanceof ImageAssetMeta) {
-                var aAsI = (ImageAssetMeta) a.getMeta();
+                var m = (ImageAssetMeta) a.getMeta();
 
-                if (aAsI.getBaseImageAssetId() != null)
-                    System.out.println("\tBase Image Asset Id: " + aAsI.getBaseImageAssetId());
+                if (m.getBaseImageAssetId() != null)
+                    System.out.println("\tBase Image Asset Id: " + m.getBaseImageAssetId());
             }
 
             if (a.getMeta() instanceof AdAssetMeta) {
-                var aAsA = (AdAssetMeta) a.getMeta();
+                var m = (AdAssetMeta) a.getMeta();
 
-                System.out.println("\tProduct Description: " + aAsA.getProductDescription());
+                System.out.println("\tProduct Description: " + m.getProductDescription());
             }
 
             System.out.println();

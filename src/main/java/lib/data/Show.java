@@ -11,15 +11,15 @@ public final class Show {
         this.description = description;
     }
 
-    public long GetId() {
+    public long getId() {
         return id;
     }
 
-    public String GetName() {
+    public String getName() {
         return name;
     }
 
-    public String GetDescription() {
+    public String getDescription() {
         return description;
     }
 }

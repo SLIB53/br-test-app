@@ -22,9 +22,9 @@ public class BRTestAppStore {
         Show s;
 
         synchronized (Shows) {
-            s = new Show(GenShowId(), name, description);
+            s = new Show(generateShowId(), name, description);
 
-            Shows.put(s.GetId(), s);
+            Shows.put(s.getId(), s);
         }
 
         return s;
@@ -75,7 +75,7 @@ public class BRTestAppStore {
         Asset a;
 
         synchronized (Assets) {
-            a = new Asset(GenAssetId(), ownerShowId, name, type, url, expiration, metadata);
+            a = new Asset(generateAssetId(), ownerShowId, name, type, url, expiration, metadata);
 
             Assets.put(a.getId(), a);
         }
@@ -89,15 +89,15 @@ public class BRTestAppStore {
                 .collect(Collectors.toList());
     }
 
-    private long GenShowId() throws RuntimeException {
-        return GenRecordId(Shows.keySet());
+    private long generateShowId() throws RuntimeException {
+        return generateItemId(Shows.keySet());
     }
 
-    private long GenAssetId() throws RuntimeException {
-        return GenRecordId(Assets.keySet());
+    private long generateAssetId() throws RuntimeException {
+        return generateItemId(Assets.keySet());
     }
 
-    private static long GenRecordId(Set<Long> m) throws RuntimeException {
+    private static long generateItemId(Set<Long> m) throws RuntimeException {
         long newIdCandidate;
 
         for (int i = 1; ; i++) {
