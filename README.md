@@ -60,8 +60,14 @@ docker build --tag slib53/br-test-app:1.0.0 https://github.com/SLIB53/br-test-ap
 
 Run:
 
-```
+```sh
 docker run slib53/br-test-app:1.0.0
+```
+
+Additionally, the container contains both the source (`/home/source`) and distribution (`/home/dist`). To access the container for a development sandbox, you can run the image interactively:
+
+```sh
+docker run -it --entrypoint sh slib53/br-test-app:1.0.0
 ```
 
 ### Local
