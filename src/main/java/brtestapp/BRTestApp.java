@@ -1,9 +1,8 @@
 package brtestapp;
 
 import brtestapp.lib.data.*;
-import brtestapp.storage.*;
+import brtestapp.storage.BRTestAppStore;
 
-import java.lang.StringBuilder;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,48 +20,48 @@ public class BRTestApp {
         // add "Mr. Bean"
 
         final var mrBean = storage.createShow(
-            "Mr. Bean",
-            "A British sitcom starring Rowan Atkinson."
+                "Mr. Bean",
+                "A British sitcom starring Rowan Atkinson."
         );
 
         // add episode 1
 
         final var mrBeanEpisode1 = storage.createVideoAsset(
-            mrBean.getId(),
-            "mr-bean-s1e1",
-            "https://youtu.be/iIaMLosX_kQ",
-            2147385600,
-            VideoAssetMeta.VideoTypes.EPISODE
+                mrBean.getId(),
+                "mr-bean-s1e1",
+                "https://youtu.be/iIaMLosX_kQ",
+                2147385600,
+                VideoAssetMeta.VideoTypes.EPISODE
         );
 
         // add default image
 
         final var mrBeanDefaultImage = storage.createImageAsset(
-            mrBean.getId(),
-            "mr-bean-default-image",
-            "https://via.placeholder.com/150",
-            2147385600,
-            null
+                mrBean.getId(),
+                "mr-bean-default-image",
+                "https://via.placeholder.com/150",
+                2147385600,
+                null
         );
 
         // add poster (missing url)
 
         final var mrBeanPoster1 = storage.createImageAsset(
-            mrBean.getId(),
-            "mr-bean-poster-1",
-            null,
-            2147385600,
-            mrBeanDefaultImage.getId()
+                mrBean.getId(),
+                "mr-bean-poster-1",
+                null,
+                2147385600,
+                mrBeanDefaultImage.getId()
         );
 
         // add ad
 
         final var mrBeanAd = storage.createAdAsset(
-            mrBean.getId(),
-            "mr-bean-ad",
-            "https://youtu.be/XUSpZ9IKdFg",
-            2147385600,
-            "The best show."
+                mrBean.getId(),
+                "mr-bean-ad",
+                "https://youtu.be/XUSpZ9IKdFg",
+                2147385600,
+                "The best show."
         );
 
         //

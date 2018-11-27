@@ -88,8 +88,8 @@ public class BRTestAppStore {
 
     public List<Asset> listAssetsByShow(long showId) {
         return Assets.values().stream()
-            .filter(asset -> showId == asset.getOwnerShowId())
-            .collect(Collectors.toList());
+                .filter(asset -> showId == asset.getOwnerShowId())
+                .collect(Collectors.toList());
     }
 
     private long generateShowId() throws RuntimeException {
