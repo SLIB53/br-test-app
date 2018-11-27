@@ -88,19 +88,19 @@ public class BRTestAppStore {
 
     public List<Asset> listAssetsByShow(long showId) {
         return Assets.values().stream()
-                .filter(asset -> showId == asset.getOwnerShowId())
-                .collect(Collectors.toList());
+            .filter(asset -> showId == asset.getOwnerShowId())
+            .collect(Collectors.toList());
     }
 
     private long generateShowId() throws RuntimeException {
-        return generateItemId(Shows.keySet());
+        return generateIdFromSet(Shows.keySet());
     }
 
     private long generateAssetId() throws RuntimeException {
-        return generateItemId(Assets.keySet());
+        return generateIdFromSet(Assets.keySet());
     }
 
-    private static long generateItemId(Set<Long> m) throws RuntimeException {
+    private static long generateIdFromSet(Set<Long> m) throws RuntimeException {
         var uuid = UUID.randomUUID();
 
         if (!m.contains(uuid.getLeastSignificantBits()))

@@ -31,7 +31,7 @@ public class BRTestApp {
             mrBean.getId(),
             "mr-bean-s1e1",
             "https://youtu.be/iIaMLosX_kQ",
-            0,
+            2147385600,
             VideoAssetMeta.VideoTypes.EPISODE
         );
 
@@ -41,7 +41,7 @@ public class BRTestApp {
             mrBean.getId(),
             "mr-bean-default-image",
             "https://via.placeholder.com/150",
-            0,
+            2147385600,
             null
         );
 
@@ -51,17 +51,17 @@ public class BRTestApp {
             mrBean.getId(),
             "mr-bean-poster-1",
             null,
-            0,
+            2147385600,
             mrBeanDefaultImage.getId()
         );
 
         // add ad
 
         final var mrBeanAd = storage.createAdAsset(
-            mrBean.getId(), 
-            "mr-bean-ad", 
-            "https://youtu.be/XUSpZ9IKdFg", 
-            0, 
+            mrBean.getId(),
+            "mr-bean-ad",
+            "https://youtu.be/XUSpZ9IKdFg",
+            2147385600,
             "The best show."
         );
 
