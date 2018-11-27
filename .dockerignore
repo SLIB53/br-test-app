@@ -1,9 +1,11 @@
 .git
 .idea
+.vscode
 .gradle
 .settings
 .classpath
 .project
 bin
 build
+out
 *.iml
