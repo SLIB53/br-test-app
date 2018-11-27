@@ -55,19 +55,19 @@ Asset:
 Build image directly from GitHub:
 
 ```sh
-docker build --tag slib53/br-test-app:1.0.0 https://github.com/SLIB53/br-test-app.git#v1.0.0
+docker build --tag slib53/br-test-app:1.0.1 https://github.com/SLIB53/br-test-app.git#v1.0.1
 ```
 
 Run:
 
 ```sh
-docker run slib53/br-test-app:1.0.0
+docker run slib53/br-test-app:1.0.1
 ```
 
 Additionally, the container contains both the source (`/home/source`) and distribution (`/home/dist`). To access the container for a development sandbox, you can run the image interactively:
 
 ```sh
-docker run -it --entrypoint sh slib53/br-test-app:1.0.0
+docker run -it --entrypoint sh slib53/br-test-app:1.0.1
 ```
 
 ### Local
