@@ -1,10 +1,10 @@
 # BR Test App
 
-Implements a [simple data store](./src/main/java/brtestapp/storage/BRTestAppStore.java) for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. A "Storage" layer is implemented, and the "Logic" layer is omitted, but is anticipated in the architectural design of the application.
+Implements a [simple data storage][brtestapp-storage-file] for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. A "Storage" layer is implemented, and the "Logic" layer is omitted, but is anticipated in the architectural design of the application.
 
-- As a demo, the [main program](./src/main/java/brtestapp/BRTestApp.java) creates some entries, produces an intermediate "container" object, and formats & prints the container.
-- The [data store](./src/main/java/brtestapp/storage/BRTestAppStore.java) is built as a basic thread-safe store, and is directly consumed from the top level.
-- The [brtestapp.lib.data](./src/main/java/brtestapp/lib/data/) package contains the immutable POJO classes for the assets and shows objects.
+- As a demo, the [main program][brtestapp-main-file] creates some entries, produces an intermediate "container" object, and formats & prints the container.
+- The [brtestapp.storage][brtestapp-storage-dir] package implements the storage layer, and is built as a basic thread-safe store, and is directly consumed from the top level.
+- The [brtestapp.lib.data][brestapp-lib-data-dir] package contains the immutable POJO classes for the assets and shows objects.
 
 ##### Sample Output
 
@@ -80,3 +80,8 @@ To run locally, clone this repo and use the gradle wrapper:
 ```sh
 br-test-app $ ./gradlew run
 ```
+
+[brtestapp-main-file]: ./src/main/java/brtestapp/BRTestApp.java
+[brtestapp-storage-dir]: ./src/main/java/brtestapp/storage/
+[brtestapp-storage-file]: ./src/main/java/brtestapp/storage/BRTestAppStorage.java
+[brestapp-lib-data-dir]: ./src/main/java/brtestapp/lib/data/
