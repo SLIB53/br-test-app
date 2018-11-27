@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * A mock thread-safe database.
  */
-public class BRTestAppStore {
+public class BRTestAppStorage {
     private final ShowStore showStore;
     private final AssetStore assetStore;
 
-    public BRTestAppStore() {
+    public BRTestAppStorage() {
         showStore = new ShowStore();
         assetStore = new AssetStore();
     }

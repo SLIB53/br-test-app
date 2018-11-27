@@ -1,7 +1,7 @@
 package brtestapp;
 
 import brtestapp.lib.data.*;
-import brtestapp.storage.BRTestAppStore;
+import brtestapp.storage.BRTestAppStorage;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class BRTestApp {
     private static final Logger logger = Logger.getLogger(BRTestApp.class.getName());
-    private static final BRTestAppStore storage = new BRTestAppStore();
+    private static final BRTestAppStorage storage = new BRTestAppStorage();
 
     public static void main(String[] args) {
 
