@@ -1,8 +1,8 @@
 # BR Test App
 
-Implements a [simple data store](./src/main/java/storage/BRTestAppStore.java) for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. Each asset type contains a related asset metadata type. All type definitions can be found in the [brtestapp.lib.data](./src/main/java/lib/data/) package.
+Implements a [simple data store](./src/main/java/brtestapp/storage/BRTestAppStore.java) for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. Each asset type contains a related asset metadata type. All type definitions can be found in the [brtestapp.lib.data](./src/main/java/brtestapp/lib/data/) package.
 
-As a demo, the [main program](./src/main/java/BRTestApp.java) creates some entries, produces an intermediate "container" object, and formats an output of the show and assets added.
+As a demo, the [main program](./src/main/java/brtestapp/BRTestApp.java) creates some entries, produces an intermediate "container" object, and formats an output of the show and assets added.
 
 ##### Sample Output
 
