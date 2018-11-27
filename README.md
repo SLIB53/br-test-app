@@ -7,44 +7,42 @@ As a demo, the [main program](./src/main/java/brtestapp/BRTestApp.java) creates 
 ##### Sample Output
 
 ```
-Nov 27, 2018 6:23:26 AM brtestapp.BRTestApp main
-INFO:
 Show:
-        Id: -5751567077610941277
+        Id: -8083137316828919050
         Name: Mr. Bean
         Description: A British sitcom starring Rowan Atkinson.
 
 Asset:
 
-        Id: -8996539178262142795
-        OwnerShowId: -5751567077610941277
+        Id: -5613201416530659508
+        OwnerShowId: -8083137316828919050
         Name: mr-bean-default-image
         Type: image
         Url: https://via.placeholder.com/150
-        Expiration: 0
+        Expiration: 2147385600
 
-        Id: -6722091173985647966
-        OwnerShowId: -5751567077610941277
+        Id: -6917824394542222203
+        OwnerShowId: -8083137316828919050
         Name: mr-bean-ad
         Type: ad
         Url: https://youtu.be/XUSpZ9IKdFg
-        Expiration: 0
+        Expiration: 2147385600
         Product Description: The best show.
 
-        Id: -5504493667670518906
-        OwnerShowId: -5751567077610941277
+        Id: -5025546413631648670
+        OwnerShowId: -8083137316828919050
+        Name: mr-bean-poster-1
+        Type: image
+        Expiration: 2147385600
+        Base Image Asset Id: -5613201416530659508
+
+        Id: -5099710883015432285
+        OwnerShowId: -8083137316828919050
         Name: mr-bean-s1e1
         Type: video
         Url: https://youtu.be/iIaMLosX_kQ
-        Expiration: 0
+        Expiration: 2147385600
         Video Type: episode
-
-        Id: -4966934757380976626
-        OwnerShowId: -5751567077610941277
-        Name: mr-bean-poster-1
-        Type: image
-        Expiration: 0
-        Base Image Asset Id: -8996539178262142795
 
 ```
 
@@ -64,7 +62,7 @@ Run:
 docker run slib53/br-test-app:1.0.1
 ```
 
-Additionally, the container contains both the source (`/home/source`) and distribution (`/home/dist`). To access the container for a development sandbox, you can run the image interactively:
+Additionally, the container contains both the source (`/home/source`) and distribution (`/home/dist`). You can access the container for a development sandbox by running the image interactively:
 
 ```sh
 docker run -it --entrypoint sh slib53/br-test-app:1.0.1
