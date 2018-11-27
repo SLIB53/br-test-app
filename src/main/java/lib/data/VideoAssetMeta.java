@@ -1,4 +1,4 @@
-package brtestapp;
+package brtestapp.lib.data;
 
 public final class VideoAssetMeta extends AssetMeta {
     public static class VideoTypes {

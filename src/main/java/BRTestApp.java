@@ -1,14 +1,13 @@
 package brtestapp;
 
-import java.util.List;
+import brtestapp.lib.data.*;
+import brtestapp.storage.*;
 
-import brtestapp.AdAssetMeta;
-import brtestapp.ImageAssetMeta;
-import brtestapp.VideoAssetMeta;
+import java.util.List;
 
 public class BRTestApp {
     public static void main(String[] args) {
-        BRTestAppStore storage = new BRTestAppStore();
+        var storage = new BRTestAppStore();
 
         // Add "Mr. Bean"
 
