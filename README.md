@@ -1,8 +1,12 @@
 # BR Test App
 
-Implements a [simple data store](./src/main/java/brtestapp/storage/BRTestAppStore.java) for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. Each asset type contains a related asset metadata type. All type definitions can be found in the [brtestapp.lib.data](./src/main/java/brtestapp/lib/data/) package.
+Implements a [simple data store](./src/main/java/brtestapp/storage/BRTestAppStore.java) for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. A "Storage" layer is implemented, and the "Logic" layer is omitted, but is anticipated in the architectural design of the application.
 
-As a demo, the [main program](./src/main/java/brtestapp/BRTestApp.java) creates some entries, produces an intermediate "container" object, and formats an output of the show and assets added.
+As a demo, the [main program](./src/main/java/brtestapp/BRTestApp.java) creates some entries, produces an intermediate "container" object, and formats & prints the container.
+
+The data store is built as a basic thread-safe store, and is directly consumed from the top level.
+
+The [brtestapp.lib.data](./src/main/java/brtestapp/lib/data/) package contains the immutable POJO classes for the assets and shows objects.
 
 ##### Sample Output
 
@@ -53,19 +57,19 @@ Asset:
 Build image directly from GitHub:
 
 ```sh
-docker build --tag slib53/br-test-app:1.0.1 https://github.com/SLIB53/br-test-app.git#v1.0.1
+docker build --tag slib53/br-test-app:1.0.2 https://github.com/SLIB53/br-test-app.git#v1.0.2
 ```
 
 Run:
 
 ```sh
-docker run slib53/br-test-app:1.0.1
+docker run slib53/br-test-app:1.0.2
 ```
 
 Additionally, the container contains both the source (`/home/source`) and distribution (`/home/dist`). You can access the container for a development sandbox by running the image interactively:
 
 ```sh
-docker run -it --entrypoint sh slib53/br-test-app:1.0.1
+docker run -it --entrypoint sh slib53/br-test-app:1.0.2
 ```
 
 ### Local

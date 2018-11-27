@@ -107,8 +107,6 @@ public class BRTestApp {
                 formatter.appendHeading("Asset");
 
                 for (var a : assets) {
-                    formatter.appendEmptyLine();
-
                     formatter.appendRow("Id", a.getId());
                     formatter.appendRow("OwnerShowId", a.getOwnerShowId());
                     formatter.appendRow("Name", a.getName());
@@ -137,6 +135,8 @@ public class BRTestApp {
 
                         formatter.appendRow("Product Description", m.getProductDescription());
                     }
+
+                    formatter.appendEmptyLine();
                 }
 
                 return formatter.toString();
