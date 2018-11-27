@@ -9,6 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
 
+/**
+ * A mock thread-safe database.
+ */
 public class BRTestAppStore {
     private ConcurrentMap<Long, Show> Shows;
     private ConcurrentMap<Long, Asset> Assets;
@@ -98,16 +101,13 @@ public class BRTestAppStore {
     }
 
     private static long generateItemId(Set<Long> m) throws RuntimeException {
-        long newIdCandidate;
+        var uuid = UUID.randomUUID();
 
-        for (int i = 1; ; i++) {
-            newIdCandidate = UUID.randomUUID().getLeastSignificantBits();
-            if (!m.contains(newIdCandidate))
-                break;
-            else if (i == 5)
-                throw new RuntimeException();
-        }
-
-        return newIdCandidate;
+        if (!m.contains(uuid.getLeastSignificantBits()))
+            return uuid.getLeastSignificantBits();
+        else if (!m.contains(uuid.getMostSignificantBits()))
+            return uuid.getLeastSignificantBits();
+        else
+            throw new RuntimeException("Collision detected when generating a new id. Try again.");
     }
 }
