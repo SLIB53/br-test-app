@@ -7,7 +7,7 @@ import brtestapp.storage.store.ShowStore;
 import java.util.List;
 
 /**
- * A mock thread-safe database.
+ * BRTestAppStorage
  */
 public class BRTestAppStorage {
     private final ShowStore showStore;
