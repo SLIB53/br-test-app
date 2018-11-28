@@ -85,5 +85,4 @@ br-test-app $ ./gradlew run
 [brtestapp-main-file]: ./src/main/java/brtestapp/BRTestApp.java
 [brtestapp-logic-dir]: ./src/main/java/brtestapp/logic/
 [brtestapp-storage-dir]: ./src/main/java/brtestapp/storage/
-[brtestapp-storage-file]: ./src/main/java/brtestapp/storage/BRTestAppStorage.java
 [brestapp-lib-data-dir]: ./src/main/java/brtestapp/lib/data/
