@@ -1,10 +1,10 @@
 # BR Test App
 
-Implements a [simple data storage][brtestapp-storage-file] for storing **Shows** and related **Assets** that can be video assets, image assets, or ad assets. A "Storage" layer is implemented with an in-memory thread-safe store, and the "Logic" layer is implemented providing container objects.
+A basic app for storing **Show** items and related **Asset** items that can be video assets, image assets, or ad assets. A "Storage" layer is implemented with an in-memory thread-safe store, and the "Logic" layer is implemented providing container objects.
 
-- As a demo, the [main program][brtestapp-main-file] creates some entries, produces an intermediate "container" object, and formats & prints the container.
+- As a demo, the [main program][brtestapp-main-file] stores some entries, produces an intermediate "container" object, and formats & prints the container.
 - The [brtestapp.logic][brtestapp-logic-dir] package implements the logic layer, which provides container objects for rendering objects from storage.
-- The [brtestapp.storage][brtestapp-storage-dir] package implements the storage layer, and is built as a basic thread-safe store, and is directly consumed from the top level.
+- The [brtestapp.storage][brtestapp-storage-dir] package implements the storage layer, which is built as a basic thread-safe store, and is directly consumed from the top level.
 - The [brtestapp.lib.data][brestapp-lib-data-dir] package contains the immutable POJO classes for the assets and shows objects.
 
 ##### Sample Output
@@ -64,7 +64,7 @@ Run:
 docker run slib53/br-test-app:1.2.0
 ```
 
-Additionally, the container contains both the source (`/home/source`) and distribution (`/home/dist`). You can access the container for a development sandbox by running the image interactively:
+Additionally, the docker container has both the source (`/home/source`) and distributable (`/home/dist`). You can run a container for a development sandbox by running the image interactively:
 
 ```sh
 docker run -it --entrypoint sh slib53/br-test-app:1.2.0
@@ -76,7 +76,7 @@ Requirements:
 
 - JDK 11+
 
-To run locally, clone this repo and use the gradle wrapper:
+To run locally, clone this repository and use the gradle wrapper:
 
 ```sh
 br-test-app $ ./gradlew run

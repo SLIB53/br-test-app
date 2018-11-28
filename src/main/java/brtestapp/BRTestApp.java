@@ -67,7 +67,7 @@ public class BRTestApp {
         );
 
         //
-        // Container Demo
+        // Demo
         //
 
         var container = logicLayer.MakeContainer(storageLayer, mrBean.getId());
