@@ -1,13 +1,13 @@
 package brtestapp.lib.data;
 
 public final class Asset {
-    private long id;
-    private long ownerShowId;
-    private String name;
-    private String type;
-    private String url;
-    private long expiration;
-    private AssetMeta metadata;
+    private final long id;
+    private final long ownerShowId;
+    private final String name;
+    private final String type;
+    private final String url;
+    private final long expiration;
+    private final AssetMeta metadata;
 
     public Asset(long id, long ownerShowId, String name, String type, String url, long expiration, AssetMeta metadata) {
         this.id = id;

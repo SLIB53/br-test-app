@@ -7,7 +7,7 @@ public final class VideoAssetMeta extends AssetMeta {
         public static final String CLIP = "clip";
     }
 
-    private String videoType;
+    private final String videoType;
 
     public VideoAssetMeta(String videoType) {
         this.videoType = videoType;

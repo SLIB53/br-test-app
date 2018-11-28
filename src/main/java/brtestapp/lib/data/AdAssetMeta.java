@@ -1,7 +1,7 @@
 package brtestapp.lib.data;
 
 public final class AdAssetMeta extends AssetMeta {
-    private String productDescription;
+    private final String productDescription;
 
     public AdAssetMeta(String productDescription) {
         this.productDescription = productDescription;
